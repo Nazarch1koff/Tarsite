@@ -10,29 +10,117 @@
 
     <link rel="stylesheet" href="css/profile.css">
 
-    <script defer src="js/profile.js"></script>
-
 </head>
 
 <body>
 
-    <!-- Обложка -->
+    <!-- Фон профиля -->
+    <div class="profile-banner">
 
-    <header class="banner"></header>
+        <img id="bannerImage" src="img/default-banner.jpg">
 
-    <!-- Карточка профиля -->
+        <div class="banner-overlay"></div>
 
-    <section class="profileCard glass">
+    </div>
 
-        <img id="avatar" src="img/default-avatar.png">
+    <!-- Верхняя навигация -->
+    <header class="navbar glass">
 
-        <div class="info">
+        <div class="logo">
 
-            <h1 id="name">Пользователь</h1>
+            <img id="userAvatar" src="img/default-avatar.png">
 
-            <p id="description">
-                Пока описание отсутствует.
+            <div>
+
+                <h2 id="userName">Пользователь</h2>
+
+                <span>Portfolio</span>
+
+            </div>
+
+        </div>
+
+        <nav>
+
+            <a href="../index.html">Главная</a>
+            <a href="#">Проекты</a>
+            <a href="#">Посты</a>
+            <a href="../timer.html">Расписание</a>
+            <a href="#">Обо мне</a>
+            <a href="#">Контакты</a>
+
+        </nav>
+
+    </header>
+
+    <!-- Главный экран -->
+    <section class="hero">
+
+        <!-- Левая карточка -->
+
+        <div class="glass intro">
+
+            <p>👋 Добро пожаловать</p>
+
+            <h1 id="heroName">
+
+                Назар
+
+            </h1>
+
+            <p id="heroDescription">
+
+                Инженер. Создаю решения,
+                которые упрощают сложное.
+
             </p>
+
+            <div class="buttons">
+
+                <button>
+
+                    Мои проекты
+
+                </button>
+
+                <button class="transparent">
+
+                    Связаться
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Центр -->
+
+        <div class="centerPhoto">
+
+            <img id="heroAvatar"
+                 src="img/default-avatar.png">
+
+        </div>
+
+        <!-- Таймер -->
+
+        <div class="glass timerCard">
+
+            <h3>Расписание</h3>
+
+            <p>До конца рабочего дня</p>
+
+            <div class="timer">
+
+                03:47:32
+
+            </div>
+
+            <button>
+
+                Перейти к расписанию →
+
+            </button>
 
         </div>
 
@@ -40,114 +128,47 @@
 
     <!-- Контент -->
 
-    <main class="container">
+    <section class="content">
 
-        <!-- Левая часть -->
+        <div class="left">
 
-        <div class="leftColumn">
+            <div class="glass">
 
-            <!-- Проекты -->
+                <h2>Мои проекты</h2>
 
-            <section class="glass">
-
-                <h2>🚀 Мои проекты</h2>
-
-                <div class="projectGrid">
-
-                    <div class="project">
-
-                        <img src="img/projects/project1.jpg">
-
-                        <h3>Ventilation Project</h3>
-
-                        <p>Описание проекта</p>
-
-                    </div>
-
-                    <div class="project">
-
-                        <img src="img/projects/project2.jpg">
-
-                        <h3>Portfolio Website</h3>
-
-                        <p>Описание проекта</p>
-
-                    </div>
-
-                    <div class="project">
-
-                        <img src="img/projects/project3.jpg">
-
-                        <h3>Mini Game</h3>
-
-                        <p>Описание проекта</p>
-
-                    </div>
+                <div class="projects">
 
                 </div>
 
-            </section>
+            </div>
 
-            <!-- Посты -->
+            <div class="glass">
 
-            <section class="glass">
+                <h2>Контакты</h2>
 
-                <h2>📰 Посты</h2>
-
-                <textarea
-                    id="postText"
-                    placeholder="Что нового?"></textarea>
-
-                <button id="publish">
-
-                    Опубликовать
-
-                </button>
-
-                <div id="posts"></div>
-
-            </section>
+            </div>
 
         </div>
 
-        <!-- Правая колонка -->
+        <div class="right">
 
-        <aside class="rightColumn">
+            <div class="glass">
 
-            <div class="glass profileInfo">
+                <h2>Последние посты</h2>
 
-                <h2>📋 О профиле</h2>
-
-                <p>📅 На сайте:
-                    <span id="joinDate">
-                        Сегодня
-                    </span>
-                </p>
-
-                <p>🚀 Проектов:
-                    <span id="projectCount">3</span>
-                </p>
-
-                <p>📰 Постов:
-                    <span id="postCount">0</span>
-                </p>
+                <div id="posts"></div>
 
             </div>
 
-            <div class="glass contacts">
+            <div class="glass">
 
-                <h2>📞 Контакты</h2>
-
-                <a href="#">GitHub</a>
-                <a href="#">Telegram</a>
-                <a href="#">Discord</a>
-                <a href="#">Steam</a>
+                <h2>Документы</h2>
 
             </div>
 
-        </aside>
+        </div>
 
-    </main>
+    </section>
 
 </body>
 

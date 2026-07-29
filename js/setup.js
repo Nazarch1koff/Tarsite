@@ -69,6 +69,8 @@ button.addEventListener("click",()=>{
 
         avatar:avatarBase64,
 
+        banner: "img/default-banner.jpg",
+        
         description:bio.value,
 
         created:Date.now()

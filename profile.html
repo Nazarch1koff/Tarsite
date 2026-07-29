@@ -3,181 +3,151 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Профиль</title>
+    <title>Профиль</title>
 
-<link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/profile.css">
 
-<script defer src="js/profile.js"></script>
+    <script defer src="js/profile.js"></script>
 
 </head>
 
 <body>
 
-<div class="banner">
+    <!-- Обложка -->
 
-<div class="bannerBlur"></div>
+    <header class="banner"></header>
 
-</div>
+    <!-- Карточка профиля -->
 
-<div class="profileCard">
+    <section class="profileCard glass">
 
-<img id="avatar">
+        <img id="avatar" src="img/default-avatar.png">
 
-<div class="info">
+        <div class="info">
 
-<h1 id="name"></h1>
+            <h1 id="name">Пользователь</h1>
 
-<p id="description"></p>
+            <p id="description">
+                Пока описание отсутствует.
+            </p>
 
-</div>
+        </div>
 
-</div>
+    </section>
 
-<div class="container">
+    <!-- Контент -->
 
-    <div class="leftColumn">
+    <main class="container">
 
-        <section class="projects glass">
+        <!-- Левая часть -->
 
-            <h2>🚀 Мои проекты</h2>
+        <div class="leftColumn">
 
-            <div class="projectGrid">
+            <!-- Проекты -->
 
-                <div class="project">
+            <section class="glass">
 
-                    <img src="img/projects/project1.jpg">
+                <h2>🚀 Мои проекты</h2>
 
-                    <h3>Ventilation Calculator</h3>
+                <div class="projectGrid">
 
-                    <p>Инженерный проект.</p>
+                    <div class="project">
+
+                        <img src="img/projects/project1.jpg">
+
+                        <h3>Ventilation Project</h3>
+
+                        <p>Описание проекта</p>
+
+                    </div>
+
+                    <div class="project">
+
+                        <img src="img/projects/project2.jpg">
+
+                        <h3>Portfolio Website</h3>
+
+                        <p>Описание проекта</p>
+
+                    </div>
+
+                    <div class="project">
+
+                        <img src="img/projects/project3.jpg">
+
+                        <h3>Mini Game</h3>
+
+                        <p>Описание проекта</p>
+
+                    </div>
 
                 </div>
 
-                <div class="project">
+            </section>
 
-                    <img src="img/projects/project2.jpg">
+            <!-- Посты -->
 
-                    <h3>Portfolio</h3>
+            <section class="glass">
 
-                    <p>Мой сайт.</p>
+                <h2>📰 Посты</h2>
 
-                </div>
+                <textarea
+                    id="postText"
+                    placeholder="Что нового?"></textarea>
 
-                <div class="project">
+                <button id="publish">
 
-                    <img src="img/projects/project3.jpg">
+                    Опубликовать
 
-                    <h3>Game</h3>
+                </button>
 
-                    <p>Мини-игра.</p>
+                <div id="posts"></div>
 
-                </div>
+            </section>
+
+        </div>
+
+        <!-- Правая колонка -->
+
+        <aside class="rightColumn">
+
+            <div class="glass profileInfo">
+
+                <h2>📋 О профиле</h2>
+
+                <p>📅 На сайте:
+                    <span id="joinDate">
+                        Сегодня
+                    </span>
+                </p>
+
+                <p>🚀 Проектов:
+                    <span id="projectCount">3</span>
+                </p>
+
+                <p>📰 Постов:
+                    <span id="postCount">0</span>
+                </p>
 
             </div>
 
-        </section>
+            <div class="glass contacts">
 
-        <section class="posts glass">
+                <h2>📞 Контакты</h2>
 
-            <h2>📰 Посты</h2>
+                <a href="#">GitHub</a>
+                <a href="#">Telegram</a>
+                <a href="#">Discord</a>
+                <a href="#">Steam</a>
 
-            <textarea
-                id="postText"
-                placeholder="Что нового?"></textarea>
+            </div>
 
-            <button id="publish">
+        </aside>
 
-                Опубликовать
-
-            </button>
-
-            <div id="posts"></div>
-
-        </section>
-
-    </div>
-
-    <div class="rightColumn">
-
-        <div class="glass profileInfo">
-
-            <h2>📋 О профиле</h2>
-
-            <p><b>📅 На сайте:</b> 29.07.2026</p>
-
-            <p><b>🚀 Проектов:</b> 3</p>
-
-            <p><b>📝 Постов:</b> 0</p>
-
-            <p><b>🌐 Язык:</b> Русский</p>
-
-        </div>
-
-        <div class="glass contacts">
-
-            <h2>📞 Контакты</h2>
-
-            <a href="#">GitHub</a>
-
-            <a href="#">Telegram</a>
-
-            <a href="#">Discord</a>
-
-            <a href="#">Steam</a>
-
-        </div>
-
-    </div>
-
-
-<img src="img/projects/project2.jpg">
-
-<h3>Проект 2</h3>
-
-<p>Описание проекта</p>
-
-</div>
-
-<div class="project">
-
-<img src="img/projects/project3.jpg">
-
-<h3>Проект 3</h3>
-
-<p>Описание проекта</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="posts">
-
-<h2>📰 Посты</h2>
-
-<div class="postCreator">
-
-<textarea
-id="postText"
-placeholder="О чем думаете?"></textarea>
-
-<button id="publish">
-
-Опубликовать
-
-</button>
-
-</div>
-
-<div id="posts"></div>
-
-</section>
-
-</div>
+    </main>
 
 </body>
 

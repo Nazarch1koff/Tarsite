@@ -30,11 +30,18 @@ document
 
     try{
 
-        const result = await signInWithPopup(auth,provider);
+const result = await signInWithPopup(auth, provider);
 
-        alert("Добро пожаловать, " + result.user.displayName);
+console.log(result.user);
 
-        console.log(result.user);
+// Первый вход — создание профиля
+if (!localStorage.getItem("profile")) {
+
+    window.location.href = "setup.html";
+
+} else {
+
+    window.location.href = "profile.html";
 
     }
 

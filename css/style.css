@@ -217,8 +217,9 @@ transform:translateY(-2px);
 
     align-items:flex-start;
 
-    padding:110px 8% 60px;
-
+    padding-top:90px;
+    padding-left:8%;
+    padding-right:8%;
 }
 
 .glass{

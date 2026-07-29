@@ -210,19 +210,20 @@ transform:translateY(-2px);
 /* ---------------- */
 
 .hero{
+    min-height:100vh;
 
-height:100vh;
+    display:flex;
+    align-items:center;
 
-display:flex;
+    padding:140px 8% 60px;
 
-align-items:center;
-
-padding-left:8%;
-
+    gap:40px;
 }
 
 .glass{
-
+  
+margin-top:25px;
+  
 width:620px;
 
 padding:50px;

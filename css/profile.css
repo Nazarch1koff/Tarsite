@@ -5,109 +5,354 @@
     font-family:"Segoe UI",sans-serif;
 }
 
+html{
+
+    scroll-behavior:smooth;
+
+}
+
 body{
 
     background:#0d1117;
-
     color:white;
+    overflow-x:hidden;
 
 }
 
-.banner{
+/* ===========================
+        ФОН ПРОФИЛЯ
+=========================== */
 
-    height:320px;
-
-    background:url("../img/background.jpg") center/cover;
-
-    position:relative;
-
-}
-
-.banner::after{
-
-    content:"";
+.profile-banner{
 
     position:absolute;
+    top:0;
+    left:0;
 
-    inset:0;
+    width:100%;
+    height:100vh;
 
-    background:linear-gradient(to bottom,
-    rgba(0,0,0,.15),
-    rgba(13,17,23,.95));
+    overflow:hidden;
+    z-index:-2;
 
 }
 
-.profileCard{
+.profile-banner img{
 
-    position:relative;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 
-    width:90%;
+    transform:scale(1.08);
 
-    max-width:1200px;
+}
 
-    margin:-90px auto 0;
+.banner-overlay{
 
-    z-index:2;
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(to bottom,
+    rgba(0,0,0,.20),
+    rgba(0,0,0,.60)),
+    rgba(0,0,0,.25);
+
+    backdrop-filter:blur(8px);
+
+}
+
+/* ===========================
+          GLASS
+=========================== */
+
+.glass{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.14);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+    transition:.35s;
+
+}
+
+.glass:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* ===========================
+        NAVBAR
+=========================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:20px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:95%;
+    max-width:1500px;
+
+    padding:14px 30px;
+
+    border-radius:24px;
 
     display:flex;
 
-    align-items:flex-end;
+    justify-content:space-between;
+    align-items:center;
 
-    gap:35px;
+    z-index:1000;
 
 }
 
-#avatar{
+.logo{
 
-    width:180px;
+    display:flex;
 
-    height:180px;
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:52px;
+    height:52px;
 
     border-radius:50%;
 
     object-fit:cover;
 
-    border:5px solid rgba(255,255,255,.25);
+}
 
-    backdrop-filter:blur(20px);
+.logo h2{
 
-    background:#222;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.45);
+    font-size:28px;
 
 }
 
-.info{
+.logo span{
 
-    flex:1;
-
-    padding-bottom:25px;
+    color:#d3d3d3;
 
 }
 
-.info h1{
+nav{
 
-    font-size:42px;
+    display:flex;
 
-    margin-bottom:10px;
-
-}
-
-.info p{
-
-    color:#c7c7c7;
-
-    font-size:19px;
+    gap:35px;
 
 }
 
-.container{
+nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.25s;
+
+}
+
+nav a:hover{
+
+    color:#58b8ff;
+
+}
+
+/* ===========================
+          HERO
+=========================== */
+
+.hero{
 
     width:90%;
 
-    max-width:1200px;
+    max-width:1500px;
 
-    margin:45px auto;
+    margin:160px auto 60px;
+
+    display:grid;
+
+    grid-template-columns:360px 1fr 330px;
+
+    gap:40px;
+
+    align-items:center;
+
+}
+
+.intro{
+
+    padding:45px;
+
+    border-radius:28px;
+
+}
+
+.intro p:first-child{
+
+    color:#ffd18b;
+
+    font-size:22px;
+
+}
+
+.intro h1{
+
+    margin:25px 0;
+
+    font-size:70px;
+
+    line-height:72px;
+
+}
+
+.intro p{
+
+    font-size:24px;
+
+    color:#ddd;
+
+    line-height:42px;
+
+}
+
+.buttons{
+
+    margin-top:45px;
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.buttons button{
+
+    cursor:pointer;
+
+    padding:18px 34px;
+
+    border:none;
+
+    border-radius:18px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+}
+
+.transparent{
+
+    background:transparent;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.25);
+
+}
+
+/* ===========================
+      ЦЕНТРАЛЬНОЕ ФОТО
+=========================== */
+
+.centerPhoto{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.centerPhoto img{
+
+    width:520px;
+
+    max-width:100%;
+
+    filter:
+    drop-shadow(0 25px 60px rgba(0,0,0,.5));
+
+}
+
+/* ===========================
+      ТАЙМЕР
+=========================== */
+
+.timerCard{
+
+    border-radius:28px;
+
+    padding:35px;
+
+}
+
+.timerCard h3{
+
+    font-size:28px;
+
+}
+
+.timerCard p{
+
+    margin-top:25px;
+
+    color:#ccc;
+
+}
+
+.timer{
+
+    margin:25px 0;
+
+    font-size:54px;
+
+    font-weight:bold;
+
+}
+
+.timerCard button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+}
+
+/* ===========================
+       НИЖНИЙ КОНТЕНТ
+=========================== */
+
+.content{
+
+    width:90%;
+
+    max-width:1500px;
+
+    margin:auto;
 
     display:grid;
 
@@ -117,202 +362,99 @@ body{
 
 }
 
-.projects,
-.posts,
-.sidebar{
+.left,
+.right{
 
-    background:rgba(255,255,255,.08);
+    display:flex;
 
-    backdrop-filter:blur(20px);
+    flex-direction:column;
 
-    border:1px solid rgba(255,255,255,.12);
-
-    border-radius:24px;
-
-    padding:25px;
+    gap:35px;
 
 }
 
-.projectGrid{
+.left .glass,
+.right .glass{
 
-    margin-top:20px;
+    padding:30px;
+
+    border-radius:28px;
+
+}
+
+/* ===========================
+      ПРОЕКТЫ
+=========================== */
+
+.projects{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(3,1fr);
 
-    gap:20px;
+    gap:18px;
+
+    margin-top:25px;
 
 }
 
 .project{
 
+    height:180px;
+
+    border-radius:20px;
+
     overflow:hidden;
 
-    border-radius:18px;
+    position:relative;
 
-    background:#1d2635;
-
-    transition:.25s;
-
-}
-
-.project:hover{
-
-    transform:translateY(-6px);
+    cursor:pointer;
 
 }
 
 .project img{
 
     width:100%;
-
-    height:150px;
+    height:100%;
 
     object-fit:cover;
 
-}
-
-.project h3{
-
-    padding:15px 15px 5px;
+    transition:.4s;
 
 }
 
-.project p{
+.project:hover img{
 
-    padding:0 15px 15px;
-
-    color:#bdbdbd;
+    transform:scale(1.08);
 
 }
 
-textarea{
+.project span{
 
-    width:100%;
+    position:absolute;
 
-    min-height:120px;
+    left:18px;
 
-    resize:none;
+    bottom:18px;
 
-    border:none;
+    font-size:20px;
 
-    outline:none;
-
-    border-radius:18px;
-
-    padding:18px;
-
-    margin-top:20px;
-
-    font-size:16px;
+    font-weight:bold;
 
 }
 
-button{
-
-    margin-top:15px;
-
-    padding:14px 28px;
-
-    border:none;
-
-    border-radius:15px;
-
-    cursor:pointer;
-
-    font-size:16px;
-
-    font-weight:600;
-
-}
+/* ===========================
+       ПОСТЫ
+=========================== */
 
 .post{
 
-    margin-top:25px;
+    margin-top:18px;
 
-    padding:20px;
+    padding:18px;
 
     border-radius:18px;
 
-    background:#1a2232;
-
-}
-
-.postDate{
-
-    color:#888;
-
-    font-size:13px;
-
-    margin-bottom:12px;
-
-}
-
-.leftColumn{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:30px;
-
-}
-
-.rightColumn{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:30px;
-
-}
-
-.glass{
-
-    background:rgba(255,255,255,.08);
-
-    backdrop-filter:blur(25px);
-
-    border:1px solid rgba(255,255,255,.15);
-
-    border-radius:22px;
-
-}
-
-.profileInfo p{
-
-    margin:18px 0;
-
-    color:#d6d6d6;
-
-}
-
-.contacts{
-
-    display:flex;
-
-    flex-direction:column;
-
-}
-
-.contacts a{
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:12px 0;
-
-    transition:.3s;
-
-}
-
-.contacts a:hover{
-
-    color:#53b8ff;
-
-    padding-left:8px;
+    background:rgba(255,255,255,.05);
 
 }

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Рабочий таймер</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    transition:.8s;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(0,255,255,.25),transparent 35%),
+    radial-gradient(circle at 80% 70%,rgba(255,0,255,.15),transparent 40%);
+    filter:blur(80px);
+}
+
+.card{
+    position:relative;
+    z-index:2;
+    width:700px;
+    max-width:95%;
+    padding:45px;
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.4);
+}
+
+#clock{
+    color:white;
+    font-size:24px;
+    margin-bottom:20px;
+    opacity:.9;
+}
+
+.catbox{
+    height:170px;
+    position:relative;
+}
+
+.cat{
+    width:120px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-60px;
+    margin-top:-60px;
+
+    animation:spin 6s linear infinite;
+}
+
+@keyframes spin{
+
+0%{
+transform:rotate(0deg) translateX(75px) rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg) translateX(75px) rotate(-360deg);
+}
+
+}
+
+h1{
+    color:white;
+    font-size:42px;
+    margin-bottom:25px;
+}
+
+#timer{
+    font-size:72px;
+    color:#00ffbf;
+    font-weight:bold;
+    text-shadow:0 0 20px rgba(0,255,200,.5);
+}
+
+#status{
+
+margin-top:25px;
+font-size:28px;
+color:white;
+
+}
+
+.footer{
+
+margin-top:35px;
+color:#ddd;
+font-size:18px;
+
+}
+
+.orange{
+
+background:linear-gradient(135deg,#ff7b00,#ffb300);
+
+}
+
+.blue{
+
+background:linear-gradient(135deg,#0046ff,#00a2ff);
+
+}
+
+.purple{
+
+background:linear-gradient(135deg,#6b00ff,#b100ff);
+
+}
+
+.green{
+
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+
+}
+
+</style>
+
+</head>
+<body class="green">
+
+<div class="card">
+
+<div id="clock"></div>
+
+<div class="catbox">
+<img src="cat.gif" class="cat" id="cat">
+</div>
+
+<h1 id="title">...</h1>
+
+<div id="timer">00:00:00</div>
+
+<div id="status"></div>
+
+<div class="footer">
+Рабочее время: <b>09:00–18:00</b><br>
+Обед: <b>13:00–14:00</b>
+</div>
+
+</div>
+
+<script>
+
+const cat=document.getElementById("cat");
+
+function updateClock(){
+
+const now=new Date();
+
+document.getElementById("clock").innerHTML=
+"🕒 "+now.toLocaleTimeString("ru-RU");
+
+}
+
+function nextWorkday(){
+
+let d=new Date();
+
+do{
+
+d.setDate(d.getDate()+1);
+
+}while(d.getDay()==0||d.getDay()==6);
+
+d.setHours(9,0,0,0);
+
+return d;
+
+}
+
+function monday(){
+
+let d=new Date();
+
+do{
+
+d.setDate(d.getDate()+1);
+
+}while(d.getDay()!=1);
+
+d.setHours(9,0,0,0);
+
+return d;
+
+}
+
+function timer(){
+
+const now=new Date();
+
+let target,title,status,color,speed;
+
+const day=now.getDay();
+
+if(day==0||day==6){
+
+target=monday();
+
+title="🏖️ Выходной";
+
+status="Отдыхай 🙂";
+
+color="green";
+
+speed="6s";
+
+}else{
+
+const lunch=new Date(now);
+
+lunch.setHours(13,0,0,0);
+
+const lunchEnd=new Date(now);
+
+lunchEnd.setHours(14,0,0,0);
+
+const end=new Date(now);
+
+end.setHours(18,0,0,0);
+
+if(now<lunch){
+
+target=lunch;
+
+title="⏳ До обеда осталось";
+
+status="Держись!";
+
+color="green";
+
+speed="6s";
+
+}else if(now<lunchEnd){
+
+target=lunchEnd;
+
+title="🍔 ОБЕД!";
+
+status="Приятного аппетита!";
+
+color="orange";
+
+speed="2s";
+
+}else if(now<end){
+
+target=end;
+
+title="💼 До конца рабочего дня";
+
+status="Скоро домой 😎";
+
+color="blue";
+
+speed="5s";
+
+}else{
+
+target=nextWorkday();
+
+title="🎉 Рабочий день окончен!";
+
+status="Можно домой!";
+
+color="purple";
+
+speed="1.5s";
+
+}
+
+}
+
+const diff=target-now;
+
+const h=Math.floor(diff/1000/60/60);
+
+const m=Math.floor(diff/1000/60)%60;
+
+const s=Math.floor(diff/1000)%60;
+
+document.getElementById("title").innerHTML=title;
+
+document.getElementById("timer").innerHTML=
+
+String(h).padStart(2,"0")+":"+
+
+String(m).padStart(2,"0")+":"+
+
+String(s).padStart(2,"0");
+
+document.getElementById("status").innerHTML=status;
+
+document.body.className=color;
+
+cat.style.animationDuration=speed;
+
+}
+
+updateClock();
+
+timer();
+
+setInterval(updateClock,1000);
+
+setInterval(timer,1000);
+
+</script>
+
+</body>
+</html>

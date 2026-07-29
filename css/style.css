@@ -329,3 +329,57 @@ border:1px solid rgba(255,255,255,.2);
 transform:translateY(-5px);
 
 }
+
+/* ========================= */
+/* Язык */
+/* ========================= */
+
+.language{
+
+    display:flex;
+    align-items:center;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    margin-right:10px;
+
+}
+
+.lang{
+
+    width:55px;
+    height:45px;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:transparent;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.lang:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.lang.active{
+
+    background:white;
+
+    color:#111;
+
+}

@@ -7,14 +7,13 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
 
 const firebaseConfig = {
-
-    apiKey: "ТВОЙ_APIKEY",
-    authDomain: "ТВОЙ_AUTHDOMAIN",
-    projectId: "ТВОЙ_PROJECTID",
-    storageBucket: "ТВОЙ_STORAGE",
-    messagingSenderId: "ТВОЙ_SENDER",
-    appId: "ТВОЙ_APPID"
-
+  apiKey: "AIzaSyDAuOxXXlpVb0-kR5JW5c2BjWkK2uIVkdI",
+  authDomain: "saitiknazarch1ka.firebaseapp.com",
+  projectId: "saitiknazarch1ka",
+  storageBucket: "saitiknazarch1ka.firebasestorage.app",
+  messagingSenderId: "951951654419",
+  appId: "1:951951654419:web:6ce11f398f920ad23209e6",
+  measurementId: "G-VF7D176ETT"
 };
 
 const app = initializeApp(firebaseConfig);

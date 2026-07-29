@@ -110,28 +110,22 @@ z-index:100;
 .logo{
 
 display:flex;
-
 align-items:center;
-
-gap:12px;
-
+gap:15px;
 color:white;
 
 }
 
-.dot{
+.logo img{
 
-width:14px;
+width:42px;
+height:42px;
+border-radius:12px;
 
-height:14px;
-
-background:#58a6ff;
-
-border-radius:50%;
-
-box-shadow:0 0 20px #58a6ff;
+object-fit:cover;
 
 }
+
 
 nav{
 

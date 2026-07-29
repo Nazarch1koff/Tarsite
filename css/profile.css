@@ -248,3 +248,71 @@ button{
     margin-bottom:12px;
 
 }
+
+.leftColumn{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+.rightColumn{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+.glass{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:22px;
+
+}
+
+.profileInfo p{
+
+    margin:18px 0;
+
+    color:#d6d6d6;
+
+}
+
+.contacts{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.contacts a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 0;
+
+    transition:.3s;
+
+}
+
+.contacts a:hover{
+
+    color:#53b8ff;
+
+    padding-left:8px;
+
+}
